@@ -259,20 +259,9 @@ void TestEqual()
     bool test_2 = false;
     bool test_3 = false;
 
-    if (matrix1 == equal_1)
-    {
-        test_1 = true;
-    }
-
-    if (matrix2 == equal_2)
-    {
-        test_2 = true;
-    }
-
-    if (matrix3 == equal_3)
-    {
-        test_3 = true;
-    }
+    test_1 = (equal_1 == matrix1);
+    test_2 = (equal_2 == matrix2);
+    test_3 = (equal_3 == matrix3);
 
     ASSERT_EQUAL(test_1, 1);
     ASSERT_EQUAL(test_2, 1);
@@ -288,7 +277,6 @@ void TestEqual()
     }
     std::cerr << "----------------------" << std::endl;
 }
-
 
 
 int main()
