@@ -28,7 +28,7 @@ std::ostream& operator << (std::ostream& os, const Matrix& matrix)
             os << matrix.GetValue(y, x) << " ";
         }
             os << "|" << "\n";
-        }
+    }
     return os;
 }
 
