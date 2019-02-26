@@ -26,11 +26,13 @@ public:
     size_t GetCurrState(const size_t line_index, const size_t column_index) const;
     size_t GetHeight() const;
     size_t GetWidth() const;
+   
     void SetValue(const size_t height_index, const size_t width_index,
                                             const int health, const int armor,  const int curr_state);
 
     void Update();
 private:
+    int GetBurnNeighbour(int x, int y);
     std::vector<std::vector<Tree>> data_;
 };
 
