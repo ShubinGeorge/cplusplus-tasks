@@ -1,0 +1,8 @@
+﻿  main.cpp
+  forest.cpp
+c:\users\alex\documents\visual studio 2015\projects\forest\forest\forest.cpp(55): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\alex\documents\visual studio 2015\projects\forest\forest\forest.cpp(59): warning C4553: '==': operator has no effect; did you intend '='?
+c:\users\alex\documents\visual studio 2015\projects\forest\forest\forest.cpp(149): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+  Generating Code...
+  Forest.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\Forest\Debug\Forest.exe
+  Forest.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\Forest\Debug\Forest.pdb (Full PDB)
