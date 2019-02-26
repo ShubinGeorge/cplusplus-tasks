@@ -3,8 +3,7 @@
 
 
 Forest::Forest(const size_t line_number, const size_t column_number)
-{
-    
+{ 
     for (size_t i = 0; i < line_number; i++)
     {
         std::vector<Tree> line;
@@ -77,7 +76,6 @@ void Forest::Update()
                     }
                 }
             }
-
 
             if (data_[y][x].current_state_ == STATUS_GROW)
             {
@@ -152,7 +150,6 @@ std::ostream& operator << (std::ostream& os, const Forest& matrix)
     }
     return os;
 }
-
 
 
 void Forest::SetValue(const size_t line_index, const size_t column_index,
