@@ -3,80 +3,50 @@
 
 
 Forest::Forest(const size_t line_number, const size_t column_number)
-{ 
+{
     for (size_t i = 0; i < line_number; i++)
     {
         std::vector<Tree> line;
         for (size_t j = 0; j < column_number; j++)
         {
             Tree tree;
-            line.push_back(tree);
+            line.push_back(std::move(tree));
         }
-        data_.push_back(line);
+        data_.push_back(std::move(line));
     }    
 }
 
+int Forest::GetBurnNeighbour(int y, int x)
+{
+    int burn_neighbours_count = 0;
+    for (int j = y - 1; j <= y + 1; j++)
+    {
+        for (int i = x - 1; i <= x + 1; i++)
+        {
+            if (j < 0 || j >= data_.size() || i < 0
+                || i >= data_[0].size() || i == x && j == y)
+            {
+                continue;
+            }
+            else
+            {
+                if (data_[j][i].current_state_ == STATUS_BURN)
+                {
+                    burn_neighbours_count++; 
+                }
+            }
+        }
+    }
+    return burn_neighbours_count;
+}
 
 void Forest::Update()
 {
-/*
-    std::cout << "Current_state_ " << "\n";
-    for (int i = 0; i < data_.size(); i++)
-    {
-        for (int j = 0; j < data_[0].size(); j++)
-        {
-            std::cout << data_[i][j].current_state_ << " ";
-        }
-        std::cout << "\n";
-    }
-
-    std::cout << " Armor " << "\n";
-    for (int i = 0; i < data_.size(); i++)
-    {
-        for (int j = 0; j < data_[0].size(); j++)
-        {
-            std::cout << data_[i][j].armor_ << " ";
-        }
-        std::cout << "\n";
-    }
-
-    std::cout << " Health " << "\n";
-    for (int i = 0; i < data_.size(); i++)
-    {
-        for (int j = 0; j < data_[0].size(); j++)
-        {
-            std::cout << data_[i][j].health_ << " ";
-        }
-        std::cout << "\n";
-    }
-
-    std::cout << "----------------" << "\n";
-*/
-
     for (int y = 0; y < data_.size(); y++)
     {
         for (int x = 0; x < data_[0].size(); x++)
         {
-            int burn_neighbours_count = 0;
-            for (int j = y - 1; j <= y + 1; j++)
-            {
-                for (int i = x - 1; i <= x + 1; i++)
-                {
-                    if (j < 0 || j >= data_.size() || i < 0
-                        || i >= data_[0].size() || i == x && j == y)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        if (data_[j][i].current_state_ == STATUS_BURN)
-                        {
-                            burn_neighbours_count++;
-                        }
-                    }
-                }
-            }
-
+            int burn_neighbours_count = GetBurnNeighbour(y, x);
             if (data_[y][x].current_state_ == STATUS_GROW)
             {
                 if (data_[y][x].armor_ - burn_neighbours_count >= 0)
@@ -150,6 +120,7 @@ std::ostream& operator << (std::ostream& os, const Forest& matrix)
     }
     return os;
 }
+
 
 
 void Forest::SetValue(const size_t line_index, const size_t column_index,
