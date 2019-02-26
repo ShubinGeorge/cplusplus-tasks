@@ -16,15 +16,15 @@ Forest::Forest(const size_t line_number, const size_t column_number)
     }    
 }
 
-int Forest::GetBurnNeighbour(int y, int x)
+int Forest::GetBurnNeighbour(int y_coord, int x_coord)
 {
     int burn_neighbours_count = 0;
-    for (int j = y - 1; j <= y + 1; j++)
+    for (int j = y_coord - 1; j <= y_coord + 1; j++)
     {
-        for (int i = x - 1; i <= x + 1; i++)
+        for (int i = x_coord - 1; i <= x_coord + 1; i++)
         {
             if (j < 0 || j >= data_.size() || i < 0
-                || i >= data_[0].size() || i == x && j == y)
+                || i >= data_[0].size() || i == x_coord && j == y_coord)
             {
                 continue;
             }
