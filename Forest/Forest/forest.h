@@ -32,7 +32,7 @@ public:
 
     void Update();
 private:
-    int GetBurnNeighbour(int x, int y);
+    int GetBurnNeighbour(int y_coord, int x_coord);
     std::vector<std::vector<Tree>> data_;
 };
 
