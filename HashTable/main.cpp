@@ -22,7 +22,7 @@ int main()
     std::ofstream fout;
     fout.open("hash_6.txt");
 
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < table_size; i++)
     {
         fout << example_1.GetBasketSize(i) << "\n";
     }

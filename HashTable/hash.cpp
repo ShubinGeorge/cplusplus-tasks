@@ -39,7 +39,7 @@ void HashTable::Remove(const std::string& value)
 
 int HashTable::GetHash(const std::string& value) const
 {   
-    return abs(GetHash6(value)) % data_.size();
+    return GetHash6(value) % data_.size();
 }
 
 
