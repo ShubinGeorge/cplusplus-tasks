@@ -12,21 +12,17 @@ int main()
     HashTable example_1(table_size);
 
     std::ifstream in_stream("cano.txt");
-    std::string word;
-
     for (std::string word; in_stream >> word; )
     {
         example_1.Add(word);
     }
 
-    std::ofstream fout;
-    fout.open("hash_6.txt");
+    std::ofstream fout("hash_6.txt");
 
     for (int i = 0; i < table_size; i++)
     {
         fout << example_1.GetBasketSize(i) << "\n";
     }
-    fout.close();
 
     return 0;
 }

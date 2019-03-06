@@ -46,16 +46,14 @@ int HashTable::GetHash(const std::string& value) const
 bool HashTable::Has(const std::string& value) const
 {
     int key = GetHash(value);
-    bool flag = false;
     for (int i = 0; i < data_[key].size(); i++)
     {
         if (data_[key][i] == value)
         {
-            flag = true;
-            return flag;
+            return true;
         }
     }
-    return flag;
+    return false;
 }
 
 
@@ -65,7 +63,7 @@ int HashTable::GetBasketSize(const int key) const
 }
 
 
-std::vector<std::vector<std::string>> HashTable::GetData() const
+const std::vector<std::vector<std::string>>& HashTable::GetData() const
 {
     std::vector<std::vector<std::string>> result;
     for (int i = 0; i < data_.size(); i++)
@@ -76,25 +74,25 @@ std::vector<std::vector<std::string>> HashTable::GetData() const
 }
 
 
-int GetHash1(const std::string& value)
+int HashTable::GetHash1(const std::string& value) const
 {
     return 1;
 }
 
 
-int GetHash2(const std::string& value)
+int HashTable::GetHash2(const std::string& value) const
 {
     return value[0] - 0;
 }
 
 
-int GetHash3(const std::string& value)
+int HashTable::GetHash3(const std::string& value) const
 {
     return value.size();
 }
 
 
-int GetHash4(const std::string& value)
+int HashTable::GetHash4(const std::string& value) const
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -105,7 +103,7 @@ int GetHash4(const std::string& value)
 }
 
 
-int GetHash5(const std::string& value)
+int HashTable::GetHash5(const std::string& value) const
 {
     int hash = 0;
     for (int i = 0; i < value.size(); i++)
@@ -116,8 +114,12 @@ int GetHash5(const std::string& value)
 }
 
 
-int GetHash6(const std::string& value)
+int HashTable::GetHash6(const std::string& value) const
 {
+    if(value.size() == 0)
+    {  
+        return 1;
+    }
     auto hash = [](auto&& self, std::string value, int index) -> int
     { return index < 2 ? value[0] - 0 : (self(self, value, index - 1) << 1) ^ value[index]; };   
     return hash(hash, value, value.size());
