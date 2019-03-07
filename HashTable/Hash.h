@@ -24,7 +24,7 @@ public:
     int GetHash(const std::string& string) const;
     const std::vector<std::vector<std::string>>& GetData() const;
 
-    int GetBasketSize(const int key) const;
+    size_t GetBasketSize(const int key) const;
 
 private:
     std::vector<std::vector<std::string>> data_;

@@ -57,7 +57,7 @@ bool HashTable::Has(const std::string& value) const
 }
 
 
-int HashTable::GetBasketSize(const int key) const
+size_t HashTable::GetBasketSize(const int key) const
 {
     return data_[key].size();
 }
@@ -120,7 +120,18 @@ int HashTable::GetHash6(const std::string& value) const
     {  
         return 1;
     }
-    auto hash = [](auto&& self, std::string value, int index) -> int
-    { return index < 2 ? value[0] - 0 : (self(self, value, index - 1) << 1) ^ value[index]; };   
-    return hash(hash, value, value.size());
+    else
+    {
+        int hash = value[0];
+        for (int i = 1; i < value.size(); i++)
+        {
+            hash = (hash << 1) ^ value[i];
+        }
+        return hash;
+    }
 }
+
+
+
+
+
