@@ -1,35 +1,58 @@
 #include <iostream>
+#include <istream>
+#include <ostream>
 #include "storage.h"
 #include "Hash.h"
 
-PasswordStorage::PasswordStorage(const int size) : storage(size)
+
+PasswordStorage::PasswordStorage(const int size) : storage_(size)
 {}
 
 
-bool PasswordStorage::PasswordControl()
+void PasswordStorage::Add(const std::pair<std::string, std::string>& new_pair)
 {
-    std::cout << "Please, input password: ";
-    std::string user_password;
-    std::getline(std::cin, user_password);
-    
-    if (storage.GetHash6(user_password) == password_hash)
+    storage_.Add(new_pair);
+}
+
+
+std::string PasswordStorage::GetNickPassword(const std::string& nickname)
+{
+    if (storage_.Has(nickname) == false)
     {
-        return true;
+        return "Sorry, there is no user <" + nickname +  ">. Try again.";
     }
-    return false;
+
+    int key = storage_.GetHash(nickname);
+    for (int i = 0; i < storage_.GetData().size(); i++)
+    {
+        if (storage_.GetData()[key][i].first == nickname)
+        {
+            
+            return "User:" + nickname + "\nPassword:" + storage_.GetData()[key][i].second;
+        }        
+    }    
 }
 
-std::string GetNickPassword(const std::string& nickname)
+
+void PasswordStorage::PrintStorage()
 {
-    
-    //Хочу здесь обратиться к методу PasswordControl(),
-    //чтобы проверить правильность пароля и допусть/не допустить 
-    //пользователя к методу,хотя в main() метод работает
-    //Не выходит обратиться через bool flag = this->PasswordControl()
-    //bool flag = storage.PasswordControl(); тоже не работает
-    return 0;
+    for (int i = 0; i < storage_.GetData().size(); i++)
+    {
+        if (!storage_.GetData()[i].empty())
+        {
+            for (int j = 0; j < storage_.GetData()[i].size(); j++)
+            {
+                std::cout << "User: " << storage_.GetData()[i][j].first
+                    << " Password: " << storage_.GetData()[i][j].second << "\n";
+            }
+        }
+    }
 }
 
 
-
+std::ostream& operator<<(std::ostream& os, const PasswordStorage& storage)
+{
+    //os << storage.GetData()[0][0].first;
+    return os;
+}
 

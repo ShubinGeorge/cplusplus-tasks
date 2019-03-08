@@ -19,12 +19,12 @@ size_t HashTable::GetBasketSize(const int key) const
 }
 
 
-bool HashTable::Has(const std::pair<std::string, std::string>& pair) const
+bool HashTable::Has(const std::string& value) const
 {
-    int key = GetHash(pair);
+    int key = GetHash(value);
     for (int i = 0; i < data_[key].size(); i++)
     {
-        if (data_[key][i].first == pair.first)
+        if (data_[key][i].first == value)
         {
             return true;
         }
@@ -35,17 +35,17 @@ bool HashTable::Has(const std::pair<std::string, std::string>& pair) const
 
 void HashTable::Add(const std::pair<std::string, std::string>& new_pair)
 {
-    if (this->Has(new_pair) == 0)
+    if (this->Has(new_pair.first) == 0)
     {
-        int key = GetHash(new_pair);
+        int key = GetHash(new_pair.first);
         data_[key].push_back(new_pair);
     }
 }
 
 
-int HashTable::GetHash(const std::pair<std::string, std::string>& pair) const
+int HashTable::GetHash(const std::string& value) const
 {
-    return GetHash6(pair.first) % data_.size();
+    return GetHash6(value) % data_.size();
 }
 
 
@@ -69,7 +69,7 @@ int HashTable::GetHash6(const std::string& value) const
 
 void HashTable::Remove(const std::pair<std::string, std::string>& pair)
 {
-    int key = GetHash(pair);
+    int key = GetHash(pair.first);
     for (int i = 0; i < data_[key].size(); i++)
     {
         if (pair == data_[key][i])
@@ -82,3 +82,12 @@ void HashTable::Remove(const std::pair<std::string, std::string>& pair)
 
 
 
+const std::vector<std::vector<std::pair<std::string, std::string>>> HashTable::GetData() const
+{
+    std::vector<std::vector<std::pair<std::string, std::string>>> result;
+    for (int i = 0; i < data_.size(); i++)
+    {
+        result.push_back(data_[i]);
+    }
+    return result;
+}

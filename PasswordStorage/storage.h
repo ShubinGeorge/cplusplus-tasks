@@ -1,17 +1,23 @@
 #pragma once
 #include "Hash.h"
+#include <istream>
+#include <ostream>
 
 
 class PasswordStorage
 {
-    friend class HashTable;
+
+   friend std::ostream& operator<<(std::ostream& os, const PasswordStorage& storage);
+   friend class HashTable;
 public:
 
     PasswordStorage(const int size);
-    bool PasswordControl();
     std::string GetNickPassword(const std::string& nickname);
+    void Add(const std::pair<std::string, std::string>& new_pair);
+    void PrintStorage();
 
 private:
-    HashTable storage;
-    int password_hash = 1444;
+    HashTable storage_;
+    int password_hash = 89404;
 };
+std::ostream& operator<<(std::ostream& os, const PasswordStorage& storage);
