@@ -49,24 +49,6 @@ int HashTable::GetHash(const std::string& value) const
 }
 
 
-int HashTable::GetHash6(const std::string& value) const
-{
-    if (value.size() == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        int hash = value[0];
-        for (int i = 1; i < value.size(); i++)
-        {
-            hash = (hash << 1) ^ value[i];
-        }
-        return hash;
-    }
-}
-
-
 void HashTable::Remove(const std::pair<std::string, std::string>& pair)
 {
     int key = GetHash(pair.first);
@@ -79,7 +61,6 @@ void HashTable::Remove(const std::pair<std::string, std::string>& pair)
         }
     }
 }
-
 
 
 const std::vector<std::vector<std::pair<std::string, std::string>>> HashTable::GetData() const
