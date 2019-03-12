@@ -65,12 +65,7 @@ size_t HashTable::GetBasketSize(const int key) const
 
 const std::vector<std::vector<std::string>>& HashTable::GetData() const
 {
-    std::vector<std::vector<std::string>> result;
-    for (int i = 0; i < data_.size(); i++)
-    {
-        result.push_back(data_[i]);
-    }
-    return result;   
+    return data_;   
 }
 
 
@@ -120,15 +115,12 @@ int HashTable::GetHash6(const std::string& value) const
     {  
         return 1;
     }
-    else
+    int hash = value[0];
+    for (int i = 1; i < value.size(); i++)
     {
-        int hash = value[0];
-        for (int i = 1; i < value.size(); i++)
-        {
-            hash = (hash << 1) ^ value[i];
-        }
-        return hash;
+        hash = (hash << 1) ^ value[i];
     }
+    return hash;
 }
 
 
