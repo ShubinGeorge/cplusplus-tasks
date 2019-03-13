@@ -1,0 +1,8 @@
+﻿  main.cpp
+  calculator.cpp
+c:\users\alex\documents\visual studio 2015\projects\all_tests\calculator.cpp(49): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\alex\documents\visual studio 2015\projects\all_tests\calculator.cpp(53): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  assert_calculator.cpp
+  Generating Code...
+  All_tests.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\All_tests\Debug\All_tests.exe
+  All_tests.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\All_tests\Debug\All_tests.pdb (Full PDB)
