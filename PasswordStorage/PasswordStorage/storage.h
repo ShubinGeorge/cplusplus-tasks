@@ -17,6 +17,7 @@ public:
     int GetPasswordHash();
     void ChangePassword(const std::string& new_password);
     bool Has(const std::string& value) const;
+    void Remove(const std::pair<std::string, std::string>& pair);
 
 private:
     HashTable storage_;

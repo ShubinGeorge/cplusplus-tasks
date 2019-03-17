@@ -15,6 +15,11 @@ bool PasswordStorage::Has(const std::string& value) const
 }
 
 
+void PasswordStorage::Remove(const std::pair<std::string, std::string>& pair)
+{
+     storage_.Remove(pair);
+}
+
 int PasswordStorage::GetPasswordHash()
 {
     return password_hash;
@@ -40,7 +45,7 @@ std::string PasswordStorage::GetNickPassword(const std::string& nickname)
         return "Sorry, there is no user <" + nickname +  ">. Try again.";
     }
 
-    int key = storage_.GetHash(EncodeString(nickname));
+    const int key = storage_.GetHash(EncodeString(nickname));
     for (int i = 0; i < storage_.GetData()[key].size(); i++)
     {
         if (storage_.GetData()[key][i].first == EncodeString(nickname))
@@ -66,4 +71,3 @@ std::ostream& operator<<(std::ostream& os, const PasswordStorage& storage)
     }
     return os;
 }
-
