@@ -31,7 +31,7 @@ std::string GetOriginalString(const std::string& water_sign)
         const char curr_first_byte = water_sign[i];
         const char curr_second_byte = water_sign[i + 1];
         original_string.push_back(
-            (curr_first_byte & (0xF0)) + (curr_second_byte & 0x0F)
+            (curr_first_byte & 0xF0) + (curr_second_byte & 0x0F)
         );
     }
 
@@ -57,7 +57,6 @@ int main()
 
     //const std::string original_string = GetOriginalString(water_sign);
     //std::cout << "original string = [" << original_string << "]" << std::endl;
-
     std::cout << "-------------------------------------------\n";
 
     std::cout << "Input size of water sign: ";
@@ -68,14 +67,13 @@ int main()
     std::string input_water_sign;
     for (size_t i = 0; i < water_sign_size; i++)
     {
-        char curr_hex = 0;
+        int curr_hex = 0;
         std::cin >> std::hex >> curr_hex;
         input_water_sign.push_back(curr_hex);
     }
 
     std::cout << "original string = ["
-              << GetOriginalString(water_sign)
+              << GetOriginalString(input_water_sign)
               << "]" << std::endl;
-
     return 0;
 }
