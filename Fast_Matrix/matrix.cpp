@@ -179,14 +179,14 @@ Matrix Matrix::operator*(const Matrix& rhs)
             const int beg_pos = i * this->GetHeight() / threads_count;
             const int end_pos = (i + 1 == threads_count) ?
                     this->GetHeight() : (i + 1) * this->GetHeight() / threads_count;
-			/*
+			
             std::future<Matrix> part_of_result = std::async(
                     std::launch::async,
-                    TmpMultiplication, rhs, beg_pos, end_pos
+                    TmpMultiplication, std::ref(rhs), std::ref(beg_pos), std::ref(end_pos)
                     );
             
             partials.push_back(std::move(part_of_result));
-            */
+            
 		}
 	
         for (size_t i = 0; i < threads_count; i++)
