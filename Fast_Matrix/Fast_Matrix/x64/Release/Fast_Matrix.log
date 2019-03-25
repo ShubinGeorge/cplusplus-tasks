@@ -1,0 +1,14 @@
+﻿  main.cpp
+  matrix.cpp
+..\matrix.cpp(179): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+..\matrix.cpp(179): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+..\matrix.cpp(181): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+..\matrix.cpp(181): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  Generating code
+c:\users\alex\documents\visual studio 2015\projects\fast_matrix\matrix.cpp(201): warning C4715: 'Matrix::operator*': not all control paths return a value
+  173 of 388 functions (44.6%) were compiled, the rest were copied from previous compilation.
+    38 functions were new in current compilation
+    8 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Fast_Matrix.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\Fast_Matrix\x64\Release\Fast_Matrix.exe
+  Fast_Matrix.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\Fast_Matrix\x64\Release\Fast_Matrix.pdb (Full PDB)
