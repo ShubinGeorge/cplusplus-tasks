@@ -1,4 +1,4 @@
- #include "matrix.h"
+#include "matrix.h"
 #include "profile.h"
 #include <cassert>
 #include <future>
@@ -36,7 +36,6 @@ std::ostream& operator << (std::ostream& os, const Matrix& matrix)
 
 bool Matrix::operator==(const Matrix& rhs) const
 {
-    bool flag = true;
     if (data_.size() == rhs.GetHeight() && data_[0].size() == rhs.GetWidth())
     {
         for (size_t i = 0; i < data_.size(); i++)
@@ -45,13 +44,12 @@ bool Matrix::operator==(const Matrix& rhs) const
             {
                 if (data_[i][j] != rhs.GetValue(i, j))
                 {
-                    flag = false;
-                    return flag;
+                    return false;
                 }
             }
         }
     }
-    return flag;
+    return true;
 }
 
 bool Matrix::operator!=(const Matrix& rhs) const
@@ -71,8 +69,8 @@ Matrix::Matrix(const size_t line_number, const size_t column_number)
 }
 
 
-void Matrix::SetValue(const size_t line_index, const size_t column_index,
-	const int value)
+void Matrix::SetValue(const size_t line_index,
+            const size_t column_index,const int value)
 {
     data_[line_index][column_index] = value;
 }
@@ -102,7 +100,7 @@ size_t Matrix::GetWidth() const
 
 const std::vector<std::vector<int>>& Matrix::GetData() const
 {
-	return data_;
+    return data_;
 }
 
 Matrix Matrix::operator+(const Matrix& rhs)
@@ -112,14 +110,14 @@ Matrix Matrix::operator+(const Matrix& rhs)
 
     Matrix result(this->GetHeight(), this->GetWidth());
 
-    for (int i = 0; i < rhs.GetHeight(); i++)
+    for (size_t i = 0; i < rhs.GetHeight(); i++)
     {
-        for (int j = 0; j < rhs.GetWidth(); j++)
+        for (size_t j = 0; j < rhs.GetWidth(); j++)
         {
-			result.SetValue(i, j, data_[i][j] + rhs.GetValue(i, j));
+            result.SetValue(i, j, data_[i][j] + rhs.GetValue(i, j));
         }
     }
-	return result;
+    return result;
 }
 
 Matrix Matrix::Transpose() const
@@ -179,15 +177,14 @@ Matrix Matrix::operator*(const Matrix& rhs)
             const int beg_pos = i * this->GetHeight() / threads_count;
             const int end_pos = (i + 1 == threads_count) ?
                     this->GetHeight() : (i + 1) * this->GetHeight() / threads_count;
-			
+
             std::future<Matrix> part_of_result = std::async(
-                    std::launch::async,
-                    TmpMultiplication, std::ref(rhs), std::ref(beg_pos), std::ref(end_pos)
-                    );
-            
-            partials.push_back(std::move(part_of_result));
-            
-		}
+            std::launch::async,
+            &Matrix::TmpMultiplication, this, std::ref(rhs), beg_pos, end_pos
+            );			
+ 
+            partials.push_back(std::move(part_of_result));    
+        }
 	
         for (size_t i = 0; i < threads_count; i++)
         {
@@ -197,6 +194,6 @@ Matrix Matrix::operator*(const Matrix& rhs)
         return result;
         }
     }
-    else  std::logic_error("incorrect sizes of multiplying matrices");
+    else  std::logic_error{"incorrect sizes of multiplying matrices"};
 }
 

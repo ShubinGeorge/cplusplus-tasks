@@ -13,6 +13,8 @@ class Matrix
 
 public: 
     Matrix(const size_t column_number, const size_t line_number);
+    Matrix() = default;
+    virtual ~Matrix() = default;
 
     size_t GetHeight() const;
     size_t GetWidth() const;
