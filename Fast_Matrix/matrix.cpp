@@ -192,6 +192,9 @@ Matrix Matrix::operator*(const Matrix& rhs)
 
         return result;
     }
-    else  std::logic_error{"incorrect sizes of multiplying matrices"};
+    else
+    {   
+        std::logic_error{"incorrect sizes of multiplying matrices"};
+    }
 }
 
