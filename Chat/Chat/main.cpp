@@ -150,6 +150,7 @@ void RecieveAndPrintMessages(const int my_port, std::ostream& out_stream)
         }
 
         std::string message;
+        message.reserve(recieved_messagge_size);
         for (int i = 0; i < recieved_message_size; i++)
         {
             message.push_back(recieved_message_buf[i]);
