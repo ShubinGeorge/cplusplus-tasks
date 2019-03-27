@@ -27,7 +27,7 @@ public:
     Matrix operator*(const Matrix& rhs);
     Matrix operator+(const Matrix& rhs);
 
-    Matrix TmpMultiplication(const Matrix& rhs, const int beg_pos, const int end_pos);
+    Matrix TmpMultiplication(const Matrix& rhs, const size_t beg_pos, const size_t end_pos);
 
     bool operator==(const Matrix& rhs) const;
     bool operator!=(const Matrix& rhs) const;

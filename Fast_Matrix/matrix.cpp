@@ -138,7 +138,7 @@ Matrix Matrix::Transpose() const
 }
 
 
-Matrix Matrix::TmpMultiplication(const Matrix& rhs, const int beg_pos, const int end_pos)  
+Matrix Matrix::TmpMultiplication(const Matrix& rhs, const size_t beg_pos, const size_t end_pos)  
 {
     Matrix result(this->GetHeight(),rhs.GetWidth());	
     Matrix intermediate(rhs.GetWidth(), rhs.GetHeight());
@@ -166,7 +166,6 @@ Matrix Matrix::operator*(const Matrix& rhs)
     if(data_[0].size() == rhs.GetHeight())
     {
         Matrix result(data_.size(), rhs.GetWidth());
-        { LOG_DURATION("Four Threads")
 		
         const int threads_count = 4;
         std::vector<std::future<Matrix>> partials;
@@ -174,8 +173,8 @@ Matrix Matrix::operator*(const Matrix& rhs)
 		
         for (size_t i = 0; i < threads_count; i++)
         {
-            const int beg_pos = i * this->GetHeight() / threads_count;
-            const int end_pos = (i + 1 == threads_count) ?
+            const size_t beg_pos = i * this->GetHeight() / threads_count;
+            const size_t end_pos = (i + 1 == threads_count) ?
                     this->GetHeight() : (i + 1) * this->GetHeight() / threads_count;
 
             std::future<Matrix> part_of_result = std::async(
@@ -192,7 +191,6 @@ Matrix Matrix::operator*(const Matrix& rhs)
         }
 
         return result;
-        }
     }
     else  std::logic_error{"incorrect sizes of multiplying matrices"};
 }
