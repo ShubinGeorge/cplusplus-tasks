@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\alex\documents\visual studio 2015\projects\chat\chat\main.cpp(42): warning C4018: '<': signed/unsigned mismatch
+c:\users\alex\documents\visual studio 2015\projects\chat\chat\main.cpp(53): warning C4018: '<': signed/unsigned mismatch
+LINK : fatal error LNK1168: cannot open c:\users\alex\documents\visual studio 2015\Projects\Chat\Debug\Chat.exe for writing
