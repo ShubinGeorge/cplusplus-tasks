@@ -1,0 +1,7 @@
+﻿  game.cpp
+c:\users\alex\documents\visual studio 2015\projects\beautifulforest\beautifulforest\game.cpp(19): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+c:\users\alex\documents\visual studio 2015\projects\beautifulforest\beautifulforest\game.cpp(67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alex\documents\visual studio 2015\projects\beautifulforest\beautifulforest\game.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alex\documents\visual studio 2015\projects\beautifulforest\beautifulforest\game.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  BeautifulForest.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\BeautifulForest\x64\Debug\BeautifulForest.exe
+  BeautifulForest.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\BeautifulForest\x64\Debug\BeautifulForest.pdb (Full PDB)
