@@ -13,6 +13,7 @@ public:
     void Run();
     void Update();
     void Render();
+    void HandleInput();
 
 private:
     Window main_window_;
@@ -21,8 +22,11 @@ private:
     sf::Texture adult_tree_image_;
     sf::Texture burn_tree_image_;
 
-    std::vector<std::vector<sf::CircleShape>> pictures_;
     Forest forest_;
+
+    sf::CircleShape grow_tree_;
+    sf::CircleShape adult_tree_;
+    sf::CircleShape burn_tree_;
 
     const int image_radius_ = 30;
 };

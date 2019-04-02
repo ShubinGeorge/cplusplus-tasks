@@ -6,31 +6,32 @@
 Game::Game()
     : main_window_("Leto 2010", sf::Vector2u(600, 600)), forest_(10, 10)
 {
-    forest_.SetValue(5, 5, 10, 0, 1); // задаем позицию, броню,здоровье для горящего дерева в лесу  
-
-    pictures_.reserve(forest_.GetHeight());
-    for (size_t i = 0; i < forest_.GetHeight(); i++)
-    {
-        std::vector<sf::CircleShape> line;
-        line.reserve(forest_.GetWidth());
-        for (size_t j = 0; j < forest_.GetWidth(); j++)
-        {
-            sf::CircleShape tree;
-            tree.setRadius(image_radius_);
-            tree.setFillColor(sf::Color::White);
-            line.push_back(tree);
-        }
-        pictures_.push_back(line);
-    }
+    forest_.SetValue(5, 5, 10, 0, 1); 
 
     grow_tree_image_.loadFromFile("../Data/grow_tree2.jpg");
     grow_tree_image_.setSmooth(true);
-	
+    grow_tree_.setTexture(&grow_tree_image_);
+    grow_tree_.setRadius(image_radius_);
+    grow_tree_.setFillColor(sf::Color::White);
+
     burn_tree_image_.loadFromFile("../Data/burn_tree2.jpg");
     burn_tree_image_.setSmooth(true);
+    burn_tree_.setTexture(&burn_tree_image_);
+    burn_tree_.setRadius(image_radius_);
+    burn_tree_.setFillColor(sf::Color::White);
 
     adult_tree_image_.loadFromFile("../Data/adult_tree2.jpg");
     adult_tree_image_.setSmooth(true);
+    adult_tree_.setTexture(&adult_tree_image_);
+    adult_tree_.setRadius(image_radius_);
+    adult_tree_.setFillColor(sf::Color::White);
+
+}
+
+
+void Game::HandleInput()
+{
+    getchar();
 }
 
 
@@ -40,14 +41,14 @@ void Game::Run()
     {
         Update();
         Render();
-        getchar();
-        forest_.Update();
+        HandleInput();
     }
 }
 
 
 void Game::Update()
 {
+    forest_.Update();
     main_window_.Update();
 }
 
@@ -64,21 +65,18 @@ void Game::Render()
         {
             if (forest_.GetData()[i][j].current_state_ == STATUS_GROW)
             {
-                pictures_[i][j].setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                pictures_[i][j].setTexture(&adult_tree_image_);
-                main_window_.Draw(pictures_[i][j]);
+                adult_tree_.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
+                main_window_.Draw(adult_tree_);
             }
             if (forest_.GetData()[i][j].current_state_ == STATUS_BURN)
             {
-                pictures_[i][j].setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                pictures_[i][j].setTexture(&burn_tree_image_);
-                main_window_.Draw(pictures_[i][j]);
+                burn_tree_.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
+                main_window_.Draw(burn_tree_);
             }
             if (forest_.GetData()[i][j].current_state_ == STATUS_DEAD)
             {
-                pictures_[i][j].setPosition(sf::Vector2f(image_x_coord, image_y_coord));
-                pictures_[i][j].setTexture(&grow_tree_image_);
-                main_window_.Draw(pictures_[i][j]);
+                grow_tree_.setPosition(sf::Vector2f(image_x_coord, image_y_coord));
+                main_window_.Draw(grow_tree_);
             }
             image_x_coord += 2 * image_radius_;
         }
