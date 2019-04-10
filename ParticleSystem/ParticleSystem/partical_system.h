@@ -33,9 +33,10 @@ public:
     using ParticleID = size_t;
 
     ParticleID AddParticle(
-        sf::Vector2f position, sf::Vector2f velocity,
-        sf::Vector2f acceleration, float radius
-    );
+        const sf::Vector2f position,
+        const sf::Vector2f velocity,
+        const sf::Vector2f acceleration,
+        const float radius);
 
     void RemoveParticle(const ParticleID particle_id);
     const size_t GetSize();

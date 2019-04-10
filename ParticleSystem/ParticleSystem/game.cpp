@@ -22,7 +22,6 @@ Game::Game()
 }
 
 
-
 void Game::Run()
 {
     const float updatets_per_seconds = 60.0f;

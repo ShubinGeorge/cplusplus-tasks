@@ -55,7 +55,6 @@ void Particle::Render(sf::RenderWindow& window)
 {
     shape_.setPosition(position_);
     shape_.setRadius(radius_);
-
     window.draw(shape_);
 }
 
