@@ -1,0 +1,8 @@
+﻿  game.cpp
+  Generating code
+  4 of 188 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  ParticleSystem.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\ParticleSystem\x64\Release\ParticleSystem.exe
+  ParticleSystem.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\ParticleSystem\x64\Release\ParticleSystem.pdb (Full PDB)
