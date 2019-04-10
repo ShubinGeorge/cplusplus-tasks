@@ -7,17 +7,17 @@ Game::Game()
 {
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 3.0f, WINDOW_SIZES.y / 3.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 15.0f),
+        sf::Vector2f(0, 300.0f),
         25.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 2.0f, WINDOW_SIZES.y / 2.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 15.0f),
+        sf::Vector2f(0, 300.0f),
         50.0f);
 
     particles_.AddParticle(sf::Vector2f(WINDOW_SIZES.x / 5.0f, WINDOW_SIZES.y / 2.0f),
         sf::Vector2f(0, 0),
-        sf::Vector2f(0, 15.0f),
+        sf::Vector2f(0, 300.0f),
         75.0f);
 }
 
@@ -72,32 +72,22 @@ void Game::HandleInput()
         increment.x -= delta;
     }
 
-    for (size_t i = 0; i < particles_.GetSize(); i++)
-    {
-        particles_.GetParticleByID(i).Push(increment);
-    }
+    particles_.Push(increment);
 }
+
 
 void Game::Update(const float dt)
 {
     main_window_.Update(dt);
-    for (size_t i = 0; i < particles_.GetSize(); i++)
-    {
-        particles_.GetParticleByID(i).Update(dt);
-    }
+    particles_.Update(dt);
 }
 
 
 void Game::Render()
 {
     main_window_.BeginDraw();
-
-    for (size_t i = 0; i < particles_.GetSize(); i++)
-    {
-        main_window_.Draw(particles_.GetParticleByID(i));
-    }
-
+  
+    particles_.Render(main_window_.GetWindow());
+    
     main_window_.EndDraw();
 }
-
-

@@ -2,7 +2,6 @@
 #include "partical_system.h"
 
 
-
 Window::Window(const std::string& title, const sf::Vector2u& size)
 {
     is_done_ = false;
@@ -13,12 +12,10 @@ Window::Window(const std::string& title, const sf::Vector2u& size)
 }
 
 
-
 Window::~Window()
 {
     Destroy();
 }
-
 
 
 void Window::Update(const float dt)
@@ -46,12 +43,10 @@ void Window::Update(const float dt)
 }
 
 
-
 void Window::BeginDraw()
 {
     window_.clear(sf::Color::Black);
 }
-
 
 
 void Window::Draw(sf::Drawable& drawable_object)
@@ -59,16 +54,17 @@ void Window::Draw(sf::Drawable& drawable_object)
     window_.draw(drawable_object);
 }
 
+
 void Window::Draw(Particle& particle)
 {
     particle.Render(window_);
 }
 
+
 void Window::EndDraw()
 {
     window_.display();
 }
-
 
 
 bool Window::CheckIsDone()
@@ -77,12 +73,10 @@ bool Window::CheckIsDone()
 }
 
 
-
 sf::Vector2u Window::GetWindowSize()
 {
     return window_.getSize();
 }
-
 
 
 void Window::Create()
@@ -95,9 +89,13 @@ void Window::Create()
 }
 
 
-
 void Window::Destroy()
 {
     window_.close();
 }
 
+
+sf::RenderWindow& Window::GetWindow()
+{
+    return window_;
+}

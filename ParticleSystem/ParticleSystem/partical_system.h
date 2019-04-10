@@ -39,7 +39,7 @@ public:
         float radius);
 
     void RemoveParticle(const ParticleID particle_id);
-    const size_t GetSize();
+    const size_t GetSize() const;
     Particle& GetParticleByID(const ParticleID particle_id);
 
     void Push(const sf::Vector2f delta_velocity);

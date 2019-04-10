@@ -1,7 +1,9 @@
 #include "partical_system.h"
 #include <iostream>
+
 extern const sf::Vector2u WINDOW_SIZES;
 using ParticleID = size_t;
+
 
 Particle::Particle(const sf::Vector2f position,const sf::Vector2f velocity, const sf::Vector2f acceleration, const float radius)
     : position_(position)
@@ -15,10 +17,12 @@ Particle::Particle(const sf::Vector2f position,const sf::Vector2f velocity, cons
     shape_.setPosition(position);
 }
 
+
 void Particle::Push(const sf::Vector2f delta_velocity)
 {
     velocity_ += delta_velocity;
 }
+
 
 void Particle::Update(const float dt)
 {
@@ -51,6 +55,7 @@ void Particle::Update(const float dt)
     }
 }
 
+
 void Particle::Render(sf::RenderWindow& window)
 {
     shape_.setPosition(position_);
@@ -68,9 +73,10 @@ ParticleID ParticleSystem::AddParticle(
     return particles_.size() - 1;
 }
 
+
 void ParticleSystem::RemoveParticle(const ParticleID particle_id)
 {
-    if(particle_id <= particles_.size() - 1)  
+    if (particle_id <= particles_.size() - 1)  
     {
         particles_.erase(particles_.begin() + particle_id);
     }
@@ -82,6 +88,7 @@ Particle& ParticleSystem::GetParticleByID(const ParticleID particle_id)
     return particles_[particle_id];
 }
 
+
 void ParticleSystem::Render(sf::RenderWindow& window)
 {
     for (int i = 0; i < particles_.size(); i++)
@@ -89,6 +96,7 @@ void ParticleSystem::Render(sf::RenderWindow& window)
         particles_[i].Render(window);
     }
 }
+
 
 void ParticleSystem::Update(const float dt)
 {
@@ -98,6 +106,7 @@ void ParticleSystem::Update(const float dt)
     }
 }
 
+
 void ParticleSystem::Push(const sf::Vector2f delta_velocity)
 {
     for (int i = 0; i < particles_.size(); i++)
@@ -106,7 +115,8 @@ void ParticleSystem::Push(const sf::Vector2f delta_velocity)
     }
 }
 
-const size_t ParticleSystem::GetSize()
+
+const size_t ParticleSystem::GetSize() const
 {
     return particles_.size();
 }
