@@ -51,7 +51,6 @@ void Game::HandleInput()
     sf::Vector2f increment(0, 0);
     const float delta = 100.0f;
 
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
     {
         increment.y -= delta;
