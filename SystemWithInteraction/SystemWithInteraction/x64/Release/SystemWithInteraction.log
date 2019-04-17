@@ -1,0 +1,15 @@
+﻿  game.cpp
+  main.cpp
+  partical_system.cpp
+partical_system.cpp(92): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+partical_system.cpp(92): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+  utils.cpp
+utils.cpp(18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  window.cpp
+  Generating code
+  8 of 287 functions ( 2.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SystemWithInteraction.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\SystemWithInteraction\x64\Release\SystemWithInteraction.exe
+  SystemWithInteraction.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\SystemWithInteraction\x64\Release\SystemWithInteraction.pdb (Full PDB)
