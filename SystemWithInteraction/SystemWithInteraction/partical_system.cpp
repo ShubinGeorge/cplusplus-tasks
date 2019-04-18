@@ -4,8 +4,6 @@
 #include <iostream>
 
 extern const sf::Vector2u WINDOW_SIZES;
-using ParticleID = size_t;
-
 
 Particle::Particle(const sf::Vector2f position,const sf::Vector2f velocity,
     const sf::Vector2f acceleration, const float radius, const float mass)
@@ -50,7 +48,7 @@ void Particle::Render(sf::RenderWindow& window)
 }
 
 
-ParticleID ParticleSystem::AddParticle(
+ParticleSystem::ParticleID ParticleSystem::AddParticle(
     sf::Vector2f position, sf::Vector2f velocity,
     sf::Vector2f acceleration, float radius, float mass)
 {
@@ -146,11 +144,6 @@ void ParticleSystem::Push(const sf::Vector2f delta_velocity)
 }
 
 
-const size_t ParticleSystem::GetSize() const
-{
-    return particles_.size();
-}
-
 void ParticleSystem::ApplyGravity()
 {
     const sf::Vector2f acceleration_g(0.0f, 200.0f);
@@ -159,6 +152,7 @@ void ParticleSystem::ApplyGravity()
         particle.acceleration_ += acceleration_g;
     }
 }
+
 
 void ParticleSystem::HandleCollisons()
 {

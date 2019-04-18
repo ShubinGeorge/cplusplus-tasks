@@ -25,7 +25,6 @@ private:
     sf::Color color_;
     sf::CircleShape shape_;
     float mass_;
-
 };
 
 
@@ -50,9 +49,7 @@ public:
         const float stiffness
     );
 
-    const size_t GetSize() const;
     const Particle& GetParticleByID(const ParticleID particle_id) const;
-
 
     void Push(const sf::Vector2f delta_velocity);
     void Update(const float dt);
@@ -74,6 +71,4 @@ private:
 
     std::vector<Particle> particles_;
     std::vector<Link> links_;
-
-    //int min_distance = 70;
 };
