@@ -49,6 +49,6 @@ private:
 
     std::vector<Segment> body_;
     Direction direction_;
-    int lives_ = 2;
+    int lives_ = 5;
     int score_ = 0;
 };

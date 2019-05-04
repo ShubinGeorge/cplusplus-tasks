@@ -19,16 +19,17 @@ public:
         const int char_size
     );
     void Add(const std::string& message);
-    //void Clear();
+    void AddInTop(const std::string& message);
+    void Clear();
 
     void Update(const float dt);
     void Render(sf::RenderWindow& window);
 
 
 private:
-    std::vector<std::string> messages_; //сообщения, которые видны польщзователю в данный момент
-
-    sf::RectangleShape background_;//фон для сообщений
+    std::vector<std::string> messages_;
+    sf::RectangleShape background_;
     sf::Font font_;
     sf::Text all_messages_;
+
 };

@@ -3,6 +3,7 @@
 #include "window.h"
 #include "message_box.h"
 #include "world.h"
+#include "message_box.h"
 
 class Game
 {
@@ -14,9 +15,11 @@ public:
     void HandleInput();
     void Update(const float dt);
     void Render();
+    void Communication();
 
 private:
     Window main_window_;
     World world_;
+    MessageBox message_box_;
 };
 

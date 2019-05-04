@@ -2,21 +2,25 @@
 
 #include <iostream>
 
+
 extern const sf::Vector2u WINDOW_SIZES(800, 600);
-extern const sf::Vector2i WORLD_SIZES(40, 30);
+extern const sf::Vector2i WORLD_SIZES(40, 20);
 extern const int BLOCK_SIZE = 20;
 
 Game::Game()
-    : main_window_("Snake", WINDOW_SIZES)
+    : main_window_("Snake", WINDOW_SIZES),
+      message_box_({0, (int)WORLD_SIZES.y * BLOCK_SIZE},
+      { (int)WORLD_SIZES.x * BLOCK_SIZE, (int)WINDOW_SIZES.y - WORLD_SIZES.y * BLOCK_SIZE },
+      50)
 {
-    std::srand(static_cast <unsigned int>(std::time(nullptr)));//чтобы генерить разные рандомные числа
+    std::srand(static_cast <unsigned int>(std::time(nullptr)));
     world_.Create();
 }
 
 
 void Game::Run()
 {
-    const float updatets_per_seconds = 6.0f;
+    const float updatets_per_seconds = 10.0f;
     const sf::Time time_per_update = sf::seconds(1.0f / updatets_per_seconds);
 
     sf::Clock clock;
@@ -32,14 +36,48 @@ void Game::Run()
             Update(time_per_update.asSeconds());
             time_since_last_update -= time_per_update;
         }
-        
+
+        Communication();
         Render();
+
+        if (world_.snake_.GetLives() == 0)
+        {
+            exit(0);
+        }
+    }
+}
+
+
+void Game::Communication()
+{
+    std::string snake_score = std::to_string(world_.snake_.GetScore());
+    std::string snake_lives = std::to_string(world_.snake_.GetLives());
+    message_box_.AddInTop("Game started: lives = " + snake_lives + " score = " + snake_score);
+
+    if (world_.snake_.GetHeadPosition() == world_.apple_.GetPosition())
+    {
+        message_box_.Add("Apple eaten, score + 1");
+    }
+
+    if (world_.snake_.CheckSelfCollision())
+    {
+        message_box_.Add("Self-Collision, lives - 1");
+    }
+
+    for (const Wall& wall : world_.walls_)
+    {
+        if (wall.CheckCellInWall(world_.snake_.GetHeadPosition()))
+        {
+            message_box_.Add("Wall-Collision, lives - 1");
+        }
     }
 }
 
 
 void Game::HandleInput()
 {
+
+
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && world_.snake_.GetDirection() != Snake::Direction::Down)
     {
         world_.snake_.SetDirection(Snake::Direction::Up);
@@ -59,14 +97,15 @@ void Game::HandleInput()
     {
         world_.snake_.SetDirection(Snake::Direction::Left);
     }
-
 }
 
 
 void Game::Update(const float dt)
 {
     main_window_.Update(dt);
+    message_box_.Update(dt);
     world_.Update(dt);
+
 }
 
 
@@ -75,6 +114,7 @@ void Game::Render()
     main_window_.BeginDraw();
 
     world_.Render(main_window_.GetWindow());
+    message_box_.Render(main_window_.GetWindow());
 
     main_window_.EndDraw();
 }
