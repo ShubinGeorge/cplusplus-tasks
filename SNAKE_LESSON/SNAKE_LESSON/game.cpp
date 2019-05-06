@@ -36,7 +36,6 @@ void Game::Run()
             Update(time_per_update.asSeconds());
             time_since_last_update -= time_per_update;
         }
-
         Communication();
         Render();
 
@@ -76,8 +75,6 @@ void Game::Communication()
 
 void Game::HandleInput()
 {
-
-
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && world_.snake_.GetDirection() != Snake::Direction::Down)
     {
         world_.snake_.SetDirection(Snake::Direction::Up);
@@ -105,7 +102,6 @@ void Game::Update(const float dt)
     main_window_.Update(dt);
     message_box_.Update(dt);
     world_.Update(dt);
-
 }
 
 

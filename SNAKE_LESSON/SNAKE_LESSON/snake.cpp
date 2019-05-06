@@ -16,8 +16,6 @@ void Snake::Create(const sf::Vector2i& head_position)
         sf::RectangleShape(sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE)),
         sf::Color::Green
     };
-    head.shape.setPosition((float)head.position.x, (float)head.position.y);
-    head.shape.setFillColor(head.color);
 
     body_.push_back(std::move(head));
 }
@@ -81,7 +79,6 @@ void Snake::MoveByOneCell()
         body_[i].position = body_[i - 1].position;
     }
     
-
     if (direction_ == Up)
     {
         body_[0].position.y -= 1;
@@ -125,6 +122,7 @@ void Snake::Grow()
         {
             new_position = body_[0].position + sf::Vector2i(1, 0);
         }
+
         Segment new_part = {
             new_position,
             sf::RectangleShape(sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE)),

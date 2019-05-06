@@ -6,7 +6,6 @@ extern const sf::Vector2u WINDOW_SIZES;
 extern const sf::Vector2i WORLD_SIZES;
 
 
-
 void World::Create()
 {
     Wall top_wall;
@@ -22,7 +21,7 @@ void World::Create()
     walls_.push_back(std::move(right_wall));
     
     Wall down_wall;
-    down_wall.Create({0, WORLD_SIZES.y - 1}, {WORLD_SIZES.x - 1, WORLD_SIZES.y - 1});
+    down_wall.Create({ 0, WORLD_SIZES.y - 1 }, { WORLD_SIZES.x - 1, WORLD_SIZES.y - 1 });
     walls_.push_back(down_wall);
     
     snake_.Create(FindRandomFreeCell());
@@ -32,7 +31,6 @@ void World::Create()
 
 void World::Update(const float dt)
 {
-
     snake_.Update(dt);
     apple_.Update(dt);
 
@@ -82,7 +80,6 @@ void World::HandleCollisions()
         snake_.IncreaseScore(1);
         apple_.Create(FindRandomFreeCell());
     }
-
 }
 
 

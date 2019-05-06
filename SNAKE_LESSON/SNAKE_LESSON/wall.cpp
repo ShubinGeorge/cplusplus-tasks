@@ -6,7 +6,6 @@ extern const int BLOCK_SIZE;
 
 void Wall::Update(const float dt)
 {
-
 }
 
 
@@ -36,10 +35,9 @@ void Wall::Render(sf::RenderWindow& window)
 bool Wall::CheckCellInWall(const sf::Vector2i& cell) const
 {
     if (top_left_.x <= cell.x && cell.x <= bottom_right_.x &&
-        top_left_.y <= cell.y && cell.y <= bottom_right_.y)
+            top_left_.y <= cell.y && cell.y <= bottom_right_.y)
     {
         return true;
     }
-
     return false;
 }

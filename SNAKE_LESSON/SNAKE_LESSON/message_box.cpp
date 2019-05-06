@@ -5,6 +5,7 @@ extern const sf::Vector2i WORLD_SIZES;
 extern const int BLOCK_SIZE;
 extern const sf::Vector2u WINDOW_SIZES;
 
+
 MessageBox::MessageBox(const sf::Vector2i& position, const sf::Vector2i& sizes,
     const int char_size)
 {
@@ -51,8 +52,6 @@ void MessageBox::Render(sf::RenderWindow& window)
     background_.setPosition({ 0, (float)WORLD_SIZES.y * BLOCK_SIZE});
     background_.setSize({(float)WORLD_SIZES.x * BLOCK_SIZE, (float)WINDOW_SIZES.y - WORLD_SIZES.y * BLOCK_SIZE});
 
-    window.draw(background_);
-
     std::string all_visible_messages;
     for (const std::string& message : messages_)
     {
@@ -60,6 +59,8 @@ void MessageBox::Render(sf::RenderWindow& window)
     }
 
     all_messages_.setString(all_visible_messages);
+
+    window.draw(background_);
     window.draw(all_messages_);
 }
 
