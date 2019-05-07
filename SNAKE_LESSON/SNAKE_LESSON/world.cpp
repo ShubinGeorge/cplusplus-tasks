@@ -17,13 +17,19 @@ void World::Create()
     walls_.push_back(std::move(left_wall));
 
     Wall right_wall;
-    right_wall.Create({ WORLD_SIZES.x - 1, 0 }, {WORLD_SIZES.x - 1, WORLD_SIZES.y - 1 });
+    right_wall.Create(
+    { WORLD_SIZES.x - 1, 0 }, {WORLD_SIZES.x - 1, WORLD_SIZES.y - 1 }
+    );
     walls_.push_back(std::move(right_wall));
     
     Wall down_wall;
-    down_wall.Create({ 0, WORLD_SIZES.y - 1 }, { WORLD_SIZES.x - 1, WORLD_SIZES.y - 1 });
+    down_wall.Create(
+    { 0, WORLD_SIZES.y - 1 }, { WORLD_SIZES.x - 1, WORLD_SIZES.y - 1 }
+    );
     walls_.push_back(down_wall);
     
+    events_ = Event::None;
+
     snake_.Create(FindRandomFreeCell());
     apple_.Create(FindRandomFreeCell());
 }
@@ -62,6 +68,7 @@ void World::HandleCollisions()
     {
         snake_.DecreaseLivesByOne();
         snake_.RespawnSnake();
+        events_  = Event::CollisionWithSnake;
     }
 
     for (const Wall& wall : walls_)
@@ -70,6 +77,7 @@ void World::HandleCollisions()
         {
             snake_.DecreaseLivesByOne();
             snake_.RespawnSnake();
+            events_ = Event::CollisionWithWall;
             break;         
         }
     }
@@ -79,7 +87,20 @@ void World::HandleCollisions()
         snake_.Grow();
         snake_.IncreaseScore(1);
         apple_.Create(FindRandomFreeCell());
+        events_ = Event::CollisionWithApple;
     }
+}
+
+
+World::Event World::GetLastEvent() const
+{
+    return events_;
+}
+
+
+void World::SetDirection(const Event new_event)
+{
+    events_ = new_event;
 }
 
 

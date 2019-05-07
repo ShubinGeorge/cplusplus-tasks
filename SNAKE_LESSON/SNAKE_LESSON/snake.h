@@ -29,15 +29,16 @@ public:
 
     Direction GetDirection() const;
     void SetDirection(const Direction new_direction);
+    sf::Vector2i GetHeadPosition() const;
+    const std::vector<Segment>& GetBody() const;
+
     int GetScore() const;
     void IncreaseScore(const int delta_score);
+    
     int GetLives() const;
     void DecreaseLivesByOne();
 
     bool CheckSelfCollision() const;
-
-    sf::Vector2i GetHeadPosition() const;
-    const std::vector<Segment>& GetBody() const;
 
     void Update(const float dt);
     void Render(sf::RenderWindow& window);

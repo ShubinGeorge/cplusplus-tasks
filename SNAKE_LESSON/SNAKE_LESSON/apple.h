@@ -12,8 +12,8 @@ public:
 
     sf::Vector2i GetPosition() const;
 
-    void Update(const float dt);//пустое тело , т.к по сути яблоко просто лежит пока его не съели
-    void Render(sf::RenderWindow& window);//рисует кружочек в нужном месте
+    void Update(const float dt);
+    void Render(sf::RenderWindow& window);
 
 private:
     sf::Vector2i position_;

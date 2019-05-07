@@ -34,7 +34,11 @@ void Snake::Render(sf::RenderWindow& window)
     {
         segment.shape.setFillColor(segment.color);
         segment.shape.setSize(sf::Vector2f(BLOCK_SIZE - 1, BLOCK_SIZE - 1));
-        segment.shape.setPosition(sf::Vector2f(BLOCK_SIZE * segment.position.x, BLOCK_SIZE * segment.position.y));
+        segment.shape.setPosition(
+            sf::Vector2f(
+                BLOCK_SIZE * segment.position.x,
+                BLOCK_SIZE * segment.position.y)
+        );
         window.draw(segment.shape);
     }
 }
@@ -95,7 +99,10 @@ void Snake::MoveByOneCell()
     {
         body_[0].position.x -= 1;
     }
-    sf::Vector2f new_position((float)body_[0].position.x, (float)body_[0].position.y);
+    const sf::Vector2f new_position(
+        (float)body_[0].position.x,
+        (float)body_[0].position.y
+    );
     body_[0].shape.setPosition(new_position);
 }
 
@@ -128,7 +135,9 @@ void Snake::Grow()
             sf::RectangleShape(sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE)),
             sf::Color::Yellow
         };
-        new_part.shape.setPosition((float)new_part.position.x, (float)new_part.position.y);
+        new_part.shape.setPosition(
+            (float)new_part.position.x, (float)new_part.position.y
+        );
         new_part.shape.setFillColor(new_part.color);
 
         body_.push_back(std::move(new_part));   
@@ -141,7 +150,9 @@ void Snake::Grow()
             sf::RectangleShape(sf::Vector2f(BLOCK_SIZE, BLOCK_SIZE)),
             sf::Color::Yellow
         };
-        new_part.shape.setPosition((float)new_part.position.x, (float)new_part.position.y);
+        new_part.shape.setPosition(
+            (float)new_part.position.x, (float)new_part.position.y
+        );
         new_part.shape.setFillColor(new_part.color);
 
         body_.push_back(std::move(new_part));

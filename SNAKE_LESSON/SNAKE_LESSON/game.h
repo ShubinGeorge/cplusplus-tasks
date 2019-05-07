@@ -15,7 +15,7 @@ public:
     void HandleInput();
     void Update(const float dt);
     void Render();
-    void Communication();
+    void AddMessage();
 
 private:
     Window main_window_;

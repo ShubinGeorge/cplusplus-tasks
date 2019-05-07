@@ -11,6 +11,15 @@ class World
     friend class Game;
 
 public:
+
+    enum class Event
+    {
+        CollisionWithWall,
+        CollisionWithSnake,
+        CollisionWithApple,
+        None
+    };
+
     World() = default;
     virtual ~World() = default;
 
@@ -19,10 +28,13 @@ public:
     void Update(const float dt);
     void Render(sf::RenderWindow& window);
 
-private:
-    void HandleCollisions();//в конце метода Update
-    sf::Vector2i FindRandomFreeCell() const;
+    Event GetLastEvent() const;
+    void SetDirection(const Event new_event);
 
+private:
+    void HandleCollisions();
+    sf::Vector2i FindRandomFreeCell() const;
+    Event events_;
     Snake snake_;
     Apple apple_;
     std::vector<Wall> walls_;

@@ -24,6 +24,8 @@ void Apple::Update(const float dt)
 void Apple::Render(sf::RenderWindow& window)
 {
     shape_.setFillColor(sf::Color::Red);
-    shape_.setPosition({(float)position_.x * BLOCK_SIZE, (float)position_.y * BLOCK_SIZE });
+    shape_.setPosition(
+    { (float)position_.x * BLOCK_SIZE, (float)position_.y * BLOCK_SIZE }
+    );
     window.draw(shape_);
 }

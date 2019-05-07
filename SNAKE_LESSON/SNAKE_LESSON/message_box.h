@@ -31,5 +31,4 @@ private:
     sf::RectangleShape background_;
     sf::Font font_;
     sf::Text all_messages_;
-
 };

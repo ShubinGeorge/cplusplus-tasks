@@ -6,8 +6,8 @@ extern const int BLOCK_SIZE;
 extern const sf::Vector2u WINDOW_SIZES;
 
 
-MessageBox::MessageBox(const sf::Vector2i& position, const sf::Vector2i& sizes,
-    const int char_size)
+MessageBox::MessageBox(const sf::Vector2i& position,
+       const sf::Vector2i& sizes, const int char_size)
 {
     font_.loadFromFile("../Data/fonts/FreeSerif.ttf");
     all_messages_.setFont(font_);
@@ -15,8 +15,8 @@ MessageBox::MessageBox(const sf::Vector2i& position, const sf::Vector2i& sizes,
 }
 
 
-void MessageBox::Create(const sf::Vector2i& position, const sf::Vector2i& sizes,
-    const int char_size)
+void MessageBox::Create(const sf::Vector2i& position,
+       const sf::Vector2i& sizes, const int char_size)
 {
     all_messages_.setPosition(
         static_cast<float>(position.x),
@@ -50,7 +50,10 @@ void MessageBox::Render(sf::RenderWindow& window)
 {
     background_.setFillColor(sf::Color::Black);
     background_.setPosition({ 0, (float)WORLD_SIZES.y * BLOCK_SIZE});
-    background_.setSize({(float)WORLD_SIZES.x * BLOCK_SIZE, (float)WINDOW_SIZES.y - WORLD_SIZES.y * BLOCK_SIZE});
+    background_.setSize(
+    { (float)WORLD_SIZES.x * BLOCK_SIZE,
+      (float)WINDOW_SIZES.y - WORLD_SIZES.y * BLOCK_SIZE }
+    );
 
     std::string all_visible_messages;
     for (const std::string& message : messages_)
@@ -73,8 +76,8 @@ void MessageBox::Clear()
 
 void MessageBox::Update(const float dt)
 {
-    const float vertical_size = background_.getSize().y; // in pixels 
-    const float line_height = font_.getLineSpacing( // in pixels 
+    const float vertical_size = background_.getSize().y; 
+    const float line_height = font_.getLineSpacing( 
         all_messages_.getCharacterSize()
     );
     const size_t visible_messages_count = static_cast<size_t>(
