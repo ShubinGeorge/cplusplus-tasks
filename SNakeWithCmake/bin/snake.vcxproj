@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{24BFD5F1-EC12-3C35-8E2B-28439E3F3D99}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>snake</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">snake.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">snake</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">snake.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">snake</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">snake.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">snake</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">snake.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">snake</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-graphics-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-window-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/Debug/snake.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/Debug/snake.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-graphics.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-window.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/Release/snake.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/Release/snake.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-graphics-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-window-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/MinSizeRel/snake.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/MinSizeRel/snake.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include;C:\Users\alex\C++\Library\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-graphics-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-window-d.lib;C:\Users\alex\C++\Library\SFML-2.5.1\lib\sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/RelWithDebInfo/snake.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/RelWithDebInfo/snake.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake" "-BC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin" --check-stamp-file "C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-release.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCXXCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeRCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeSystem.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake" "-BC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin" --check-stamp-file "C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-release.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCXXCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeRCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeSystem.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake" "-BC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin" --check-stamp-file "C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-release.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCXXCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeRCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeSystem.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake" "-BC:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin" --check-stamp-file "C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/bin/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/alex/Documents/Visual Studio 2015/Projects/SNakeWithCmake/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.14\Modules\Platform\WindowsPaths.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfig.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigDependencies.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLConfigVersion.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-debug.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets-release.cmake;C:\Users\alex\C++\Library\SFML-2.5.1\lib\cmake\SFML\SFMLSharedTargets.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeCXXCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeRCCompiler.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\3.14.3\CMakeSystem.cmake;C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\main.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\apple.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\wall.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\window.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\world.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\game.cpp" />
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\message_box.cpp" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\apple.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\wall.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\snake.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\window.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\world.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\game.h" />
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\message_box.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\ZERO_CHECK.vcxproj">
+      <Project>{5CCD2D8E-8F31-3283-9357-8B045EA8BB0E}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

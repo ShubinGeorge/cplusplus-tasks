@@ -1,0 +1,17 @@
+﻿  main.cpp
+  apple.cpp
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\apple.cpp(9): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  wall.cpp
+  snake.cpp
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(16): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(81): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(135): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp(150): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+  window.cpp
+  world.cpp
+  game.cpp
+  message_box.cpp
+  Generating Code...
+  snake.vcxproj -> C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\Release\snake.exe

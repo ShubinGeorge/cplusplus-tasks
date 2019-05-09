@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\apple.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\wall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\world.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\src\message_box.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\apple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\snake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\world.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\include\message_box.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{969AB24D-E5E8-33F2-8094-3E642133A84C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C0FC10F2-02B4-33B6-A0CE-AD02FF03EBF4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

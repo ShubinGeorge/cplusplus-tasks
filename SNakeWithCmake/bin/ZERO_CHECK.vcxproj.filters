@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alex\Documents\Visual Studio 2015\Projects\SNakeWithCmake\bin\CMakeFiles\c720126e64ef79ded2a39b7293ea1438\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B47E3470-6CC2-3F39-BA16-333584544FF0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
